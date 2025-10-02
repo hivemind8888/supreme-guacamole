@@ -1,0 +1,134 @@
+{
+  "recipes": [
+    {
+      "id": "1",
+      "title": "Laksa Lemak",
+      "imagePath": "/images/recipes/laksa-lemak.jpg.webp",
+      "image": "/images/recipes/laksa-lemak.jpg.webp",
+      "createdAt": "2025-10-01T10:00:00Z",
+      "description": "Rich and creamy coconut-based noodle soup",
+      "ingredients": [
+        "400g rice noodles",
+        "400ml coconut milk",
+        "200g shrimp",
+        "Fish cake slices",
+        "Bean sprouts",
+        "Laksa leaves"
+      ],
+      "instructions": [
+        "Prepare the laksa paste",
+        "Cook noodles until al dente",
+        "Simmer coconut milk with laksa paste",
+        "Add seafood and cook until done",
+        "Serve with garnishes"
+      ],
+      "preparationTime": "45 minutes",
+      "servings": 4,
+      "difficulty": "medium"
+    },
+    {
+      "id": "2",
+      "title": "Hainanese Chicken Rice",
+      "imagePath": "/images/recipes/hainanese-chicken-rice.jpg.webp",
+      "image": "/images/recipes/hainanese-chicken-rice.jpg.webp",
+      "createdAt": "2025-10-01T10:01:00Z",
+      "description": "Fragrant rice served with tender poached chicken",
+      "ingredients": [
+        "1 whole chicken",
+        "2 cups jasmine rice",
+        "Ginger",
+        "Garlic",
+        "Pandan leaves",
+        "Chicken stock"
+      ],
+      "instructions": [
+        "Clean and prepare the chicken",
+        "Cook rice with chicken stock and aromatics",
+        "Poach chicken until cooked",
+        "Prepare dipping sauces",
+        "Slice chicken and serve with rice"
+      ],
+      "preparationTime": "1 hour",
+      "servings": 4,
+      "difficulty": "medium"
+    },
+    {
+      "id": "3",
+      "title": "Chicken Rendang",
+      "imagePath": "/images/recipes/chicken-rendang-ayam.jpg.webp",
+      "image": "/images/recipes/chicken-rendang-ayam.jpg.webp",
+      "createdAt": "2025-10-01T10:02:00Z",
+      "description": "Spicy slow-cooked chicken in coconut gravy",
+      "ingredients": [
+        "1kg chicken pieces",
+        "400ml coconut milk",
+        "Lemongrass",
+        "Galangal",
+        "Rendang spice paste",
+        "Kaffir lime leaves"
+      ],
+      "instructions": [
+        "Prepare the spice paste",
+        "Brown the chicken pieces",
+        "Add coconut milk and spices",
+        "Simmer until liquid reduces",
+        "Cook until oil separates"
+      ],
+      "preparationTime": "2 hours",
+      "servings": 6,
+      "difficulty": "hard"
+    },
+    {
+      "id": "4",
+      "title": "Chicken Kapitan",
+      "imagePath": "/images/recipes/chicken-kapitan-linsfood.jpg",
+      "image": "/images/recipes/chicken-kapitan-linsfood.jpg",
+      "createdAt": "2025-10-01T10:03:00Z",
+      "description": "Nyonya-style curry with complex spice blend",
+      "ingredients": [
+        "1kg chicken pieces",
+        "400ml coconut milk",
+        "Candlenuts",
+        "Fresh turmeric",
+        "Dried chilies",
+        "Belacan"
+      ],
+      "instructions": [
+        "Blend the spice paste",
+        "Marinate chicken with spices",
+        "Fry the spice paste",
+        "Add chicken and coconut milk",
+        "Simmer until cooked"
+      ],
+      "preparationTime": "1.5 hours",
+      "servings": 4,
+      "difficulty": "medium"
+    },
+    {
+      "id": "5",
+      "title": "Mee Siam Kuah",
+      "imagePath": "/images/recipes/Mee-Siam-Kuah-SMR.jpg",
+      "image": "/images/recipes/Mee-Siam-Kuah-SMR.jpg",
+      "createdAt": "2025-10-01T10:04:00Z",
+      "description": "Spicy and tangy rice vermicelli in gravy",
+      "ingredients": [
+        "400g rice vermicelli",
+        "200g prawns",
+        "Tau pok (bean curd puffs)",
+        "Bean sprouts",
+        "Chives",
+        "Tamarind paste"
+      ],
+      "instructions": [
+        "Soak and cook vermicelli",
+        "Prepare the spicy gravy",
+        "Cook prawns and tau pok",
+        "Combine noodles with gravy",
+        "Garnish and serve"
+      ],
+      "preparationTime": "45 minutes",
+      "servings": 4,
+      "difficulty": "medium"
+    }
+  ]
+}

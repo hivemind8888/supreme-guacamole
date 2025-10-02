@@ -1,21 +1,27 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --background: #0A0A0F;
+  --foreground: #FFFFFF;
+  
+  /* Cyber-Medieval Color Palette - Enhanced Brightness */
+  --primary-neon: #00FF9C;    /* Neon green - bright */
+  --secondary-neon: #FF00E5;  /* Neon pink - bright */
+  --accent-neon: #00E5FF;     /* Neon blue - bright */
+  --surface: #1A1A24;
+  --text-primary: #FFFFFF;
+  --text-secondary: rgba(255, 255, 255, 0.7);
+  
+  /* Typography Scale */
+  --fs-h1: clamp(2rem, 5vw, 4rem);
+  --fs-h2: clamp(1.5rem, 4vw, 3rem);
+  --fs-body: clamp(1rem, 2vw, 1.2rem);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #0A0A0F;
+    --foreground: #FFFFFF;
   }
 }
 
@@ -23,4 +29,490 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Cyber-Medieval Animations (Jester Magic) */
+@keyframes float {
+  0%, 100% { 
+    transform: translateY(0) rotate(0deg); 
+  }
+  50% { 
+    transform: translateY(-10px) rotate(10deg); 
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { 
+    box-shadow: 0 0 20px rgba(0, 255, 156, 0.3); 
+  }
+  50% { 
+    box-shadow: 0 0 40px rgba(0, 255, 156, 0.6); 
+  }
+}
+
+@keyframes scroll-unfurl {
+  0% { 
+    opacity: 0; 
+    transform: scale(0.3) rotateX(-40deg);
+  }
+  100% { 
+    opacity: 1; 
+    transform: scale(1) rotateX(0deg);
+  }
+}
+
+@keyframes scroll-furl {
+  0% { 
+    opacity: 1; 
+    transform: scale(1) rotateX(0deg);
+  }
+  100% { 
+    opacity: 0; 
+    transform: scale(0.3) rotateX(40deg);
+  }
+}
+
+@keyframes jester-juggle {
+  0%, 100% { 
+    transform: rotate(0deg) scale(1);
+  }
+  25% { 
+    transform: rotate(90deg) scale(1.1);
+  }
+  50% { 
+    transform: rotate(180deg) scale(1);
+  }
+  75% { 
+    transform: rotate(270deg) scale(1.1);
+  }
+}
+
+/* Animation Delay Classes */
+.animation-delay-100 {
+  animation-delay: 100ms;
+}
+
+.animation-delay-200 {
+  animation-delay: 200ms;
+}
+
+.animation-delay-300 {
+  animation-delay: 300ms;
+}
+
+/* Jester Upload Button Styles */
+.jester-upload-btn {
+  position: fixed;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background: linear-gradient(135deg, #6b46c1 0%, #4338ca 100%);
+  border: 2px solid var(--primary-neon);
+  border-radius: 50%;
+  box-shadow: 0 4px 15px rgba(0, 255, 156, 0.2);
+}
+
+.jester-upload-btn::before {
+  content: '🎭';
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  opacity: 0.7;
+  transform: rotate(-15deg);
+  font-size: 1.2rem;
+}
+
+.jester-upload-btn:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 10px 25px rgba(0, 255, 156, 0.3);
+  border-color: var(--secondary-neon);
+}
+
+.jester-upload-btn:hover::after {
+  content: '🎼';
+  position: absolute;
+  top: -15px;
+  left: -15px;
+  animation: float 2s infinite ease-in-out;
+  font-size: 1rem;
+}
+
+.jester-upload-btn:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* Mandolin Drop Zone Styles */
+.mandolin-drop-zone {
+  border-radius: 50% 20% 50% 20%;
+  position: relative;
+  border: 2px dashed rgba(255, 0, 229, 0.3);
+  background: rgba(26, 26, 36, 0.5);
+  backdrop-filter: blur(8px);
+  transition: all 0.3s ease;
+}
+
+.mandolin-drop-zone::before {
+  content: '🪕';
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 1.5rem;
+  opacity: 0.6;
+}
+
+.mandolin-drop-zone.drag-active {
+  animation: pulse-glow 1.5s infinite;
+  border-color: var(--primary-neon);
+  background: linear-gradient(45deg, 
+    rgba(0, 255, 156, 0.1), 
+    rgba(255, 0, 229, 0.1)
+  );
+}
+
+.mandolin-drop-zone:hover {
+  border-color: var(--accent-neon);
+  transform: scale(1.02);
+}
+
+/* Medieval Scroll Modal Styles */
+.scroll-modal {
+  backdrop-filter: blur(12px);
+  background: rgba(10, 10, 15, 0.95);
+}
+
+.scroll-modal.entering {
+  animation: scroll-unfurl 0.4s ease-out;
+}
+
+.scroll-modal.exiting {
+  animation: scroll-furl 0.3s ease-in;
+}
+
+.scroll-modal-content {
+  background: linear-gradient(to bottom, #1f2937, #111827);
+  border: 1px solid rgba(0, 255, 156, 0.2);
+  border-radius: 1rem;
+  box-shadow: 0 25px 50px rgba(0, 255, 156, 0.1);
+  position: relative;
+}
+
+.scroll-modal-content::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(circle at 20% 20%, rgba(0, 255, 156, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(255, 0, 229, 0.1) 0%, transparent 50%);
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+/* Jester Juggling Loading Animation */
+.jester-juggling-animation {
+  display: inline-block;
+  animation: jester-juggle 2s linear infinite;
+  font-size: 2rem;
+}
+
+/* Progress Bar (Mandolin-shaped) */
+.progress-bar {
+  border-radius: 50% 20% 50% 20%;
+  background: linear-gradient(45deg, var(--primary-neon), var(--secondary-neon));
+  position: relative;
+  overflow: hidden;
+}
+
+.progress-bar::before {
+  content: '🪕';
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.7;
+  font-size: 0.8rem;
+}
+
+/* Interactive Element Base Styles */
+.interactive-element {
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 255, 156, 0);
+  position: relative;
+}
+
+.interactive-element:hover {
+  box-shadow: 0 0 20px rgba(0, 255, 156, 0.5);
+  transform: translateY(-2px);
+}
+
+/* Utility Classes for Cyber-Medieval Theme */
+.text-primary-neon {
+  color: var(--primary-neon);
+}
+
+.text-secondary-neon {
+  color: var(--secondary-neon);
+}
+
+.text-accent-neon {
+  color: var(--accent-neon);
+}
+
+.border-primary-neon {
+  border-color: var(--primary-neon);
+}
+
+.border-secondary-neon {
+  border-color: var(--secondary-neon);
+}
+
+.bg-surface {
+  background-color: var(--surface);
+}
+
+/* Cyber-Medieval Animations (Jester Magic) */
+@keyframes float {
+  0%, 100% { 
+    transform: translateY(0) rotate(0deg); 
+  }
+  50% { 
+    transform: translateY(-10px) rotate(10deg); 
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { 
+    box-shadow: 0 0 20px rgba(0, 255, 156, 0.3); 
+  }
+  50% { 
+    box-shadow: 0 0 40px rgba(0, 255, 156, 0.6); 
+  }
+}
+
+@keyframes scroll-unfurl {
+  0% { 
+    opacity: 0; 
+    transform: scale(0.3) rotateX(-40deg);
+  }
+  100% { 
+    opacity: 1; 
+    transform: scale(1) rotateX(0deg);
+  }
+}
+
+@keyframes scroll-furl {
+  0% { 
+    opacity: 1; 
+    transform: scale(1) rotateX(0deg);
+  }
+  100% { 
+    opacity: 0; 
+    transform: scale(0.3) rotateX(40deg);
+  }
+}
+
+@keyframes jester-juggle {
+  0%, 100% { 
+    transform: rotate(0deg) scale(1);
+  }
+  25% { 
+    transform: rotate(90deg) scale(1.1);
+  }
+  50% { 
+    transform: rotate(180deg) scale(1);
+  }
+  75% { 
+    transform: rotate(270deg) scale(1.1);
+  }
+}
+
+/* Jester Upload Button Styles */
+.jester-upload-btn {
+  position: fixed;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background: linear-gradient(135deg, #6b46c1 0%, #4338ca 100%);
+  border: 2px solid var(--primary-neon);
+  border-radius: 50%;
+  box-shadow: 0 4px 15px rgba(0, 255, 156, 0.2);
+}
+
+.jester-upload-btn::before {
+  content: '🎭';
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  opacity: 0.7;
+  transform: rotate(-15deg);
+  font-size: 1.2rem;
+}
+
+.jester-upload-btn:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 10px 25px rgba(0, 255, 156, 0.3);
+  border-color: var(--secondary-neon);
+}
+
+.jester-upload-btn:hover::after {
+  content: '🎼';
+  position: absolute;
+  top: -15px;
+  left: -15px;
+  animation: float 2s infinite ease-in-out;
+  font-size: 1rem;
+}
+
+.jester-upload-btn:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* Mandolin Drop Zone Styles */
+.mandolin-drop-zone {
+  border-radius: 50% 20% 50% 20%;
+  position: relative;
+  border: 2px dashed rgba(255, 0, 229, 0.3);
+  background: rgba(26, 26, 36, 0.5);
+  backdrop-filter: blur(8px);
+  transition: all 0.3s ease;
+}
+
+.mandolin-drop-zone::before {
+  content: '🪕';
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 1.5rem;
+  opacity: 0.6;
+}
+
+.mandolin-drop-zone.drag-active {
+  animation: pulse-glow 1.5s infinite;
+  border-color: var(--primary-neon);
+  background: linear-gradient(45deg, 
+    rgba(0, 255, 156, 0.1), 
+    rgba(255, 0, 229, 0.1)
+  );
+}
+
+.mandolin-drop-zone:hover {
+  border-color: var(--accent-neon);
+  transform: scale(1.02);
+}
+
+/* Medieval Scroll Modal Styles */
+.scroll-modal {
+  backdrop-filter: blur(12px);
+  background: rgba(10, 10, 15, 0.95);
+}
+
+.scroll-modal.entering {
+  animation: scroll-unfurl 0.4s ease-out;
+}
+
+.scroll-modal.exiting {
+  animation: scroll-furl 0.3s ease-in;
+}
+
+.scroll-modal-content {
+  background: linear-gradient(to bottom, #1f2937, #111827);
+  border: 1px solid rgba(0, 255, 156, 0.2);
+  border-radius: 1rem;
+  box-shadow: 0 25px 50px rgba(0, 255, 156, 0.1);
+  position: relative;
+}
+
+.scroll-modal-content::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(circle at 20% 20%, rgba(0, 255, 156, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(255, 0, 229, 0.1) 0%, transparent 50%);
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+/* Jester Juggling Loading Animation */
+.jester-juggling-animation {
+  display: inline-block;
+  animation: jester-juggle 2s linear infinite;
+  font-size: 2rem;
+}
+
+/* Progress Bar (Mandolin-shaped) */
+.progress-bar {
+  border-radius: 50% 20% 50% 20%;
+  background: linear-gradient(45deg, var(--primary-neon), var(--secondary-neon));
+  position: relative;
+  overflow: hidden;
+}
+
+.progress-bar::before {
+  content: '🪕';
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.7;
+  font-size: 0.8rem;
+}
+
+/* Interactive Element Base Styles */
+.interactive-element {
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 255, 156, 0);
+  position: relative;
+}
+
+.interactive-element:hover {
+  box-shadow: 0 0 20px rgba(0, 255, 156, 0.5);
+  transform: translateY(-2px);
+}
+
+/* Utility Classes for Cyber-Medieval Theme */
+.text-primary-neon {
+  color: var(--primary-neon);
+}
+
+.text-secondary-neon {
+  color: var(--secondary-neon);
+}
+
+.text-accent-neon {
+  color: var(--accent-neon);
+}
+
+.border-primary-neon {
+  border-color: var(--primary-neon);
+}
+
+.border-secondary-neon {
+  border-color: var(--secondary-neon);
+}
+
+.bg-surface {
+  background-color: var(--surface);
+}
+
+/* Royal Accept Button - Maximum Cyber-Medieval Visibility */
+.royal-accept-button {
+  background: linear-gradient(45deg, #00FF9C 0%, #00E5FF 100%) !important;
+  color: #000000 !important;
+  font-weight: 900 !important;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.9) !important;
+  box-shadow: 
+    0 0 25px rgba(0, 255, 156, 1),
+    0 0 50px rgba(0, 255, 156, 0.8),
+    0 6px 20px rgba(0, 0, 0, 0.4) !important;
+  border: 3px solid #00FF9C !important;
+  filter: brightness(1.2) !important;
+}
+
+.royal-accept-button:hover {
+  background: linear-gradient(45deg, #00E5FF 0%, #FF00E5 100%) !important;
+  box-shadow: 
+    0 0 35px rgba(0, 229, 255, 1),
+    0 0 70px rgba(0, 229, 255, 0.9),
+    0 10px 30px rgba(0, 0, 0, 0.5) !important;
+  border-color: #FF00E5 !important;
+  transform: scale(1.15) !important;
+  filter: brightness(1.4) !important;
 }
